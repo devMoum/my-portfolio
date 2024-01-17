@@ -68,7 +68,6 @@ header {
                 right: 10%;
                 bottom: -150px;
                 background-color: white;
-                // border: solid 1px;
                 li {
                     position: relative;
                     width: 100%;
@@ -89,6 +88,9 @@ header {
             }
         }
         @media (max-width: 460px) {
+            .logo {
+                font-size: 28px;
+            }
             .navbar {
                 display: none;
             }
@@ -117,13 +119,38 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            // border: solid;
             div {
-                // transform: rotate(180deg);
                 font-size: 300px;
                 font-weight: 300;
                 color: $main_blue;
                 z-index: -1;
+                animation-name: rotation;
+                animation-duration: 25s;
+                animation-timing-function:ease-in-out;
+                animation-iteration-count:infinite;
+            }
+            @keyframes rotation {
+                0% {
+                    transform: rotate(0deg);
+                }
+                10% {
+                    transform: rotate(0deg);
+                }
+                20% {
+                    transform: rotate(0deg);
+                }
+                30% {
+                    transform: rotate(180deg);
+                }
+                75% {
+                    transform: rotate(180deg);
+                }
+                85% {
+                    transform: rotate(360deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
             }
         }
         .intro {
@@ -143,10 +170,12 @@ header {
                 text-align: center;
                 text-transform: capitalize;
                 font-size: 50px;
-                // transform: translateY(-50%);
             }
             h3:first-of-type {
                 color: $main_blue;
+            }
+            h3:last-of-type {
+                color: $sec_black;
             }
             .links {
                 display: flex;
@@ -155,7 +184,7 @@ header {
                 a {
                     text-align: center;
                     font-size: 18px;
-                    font-weight: 300;
+                    font-weight: 400;
                     text-transform: capitalize;
                     border: solid 1px;
                     padding: 10px 15px;
@@ -164,21 +193,58 @@ header {
                     &:hover {
                         background-color: $main_blue;
                         border-color: $main_blue;
-                        font-weight: 400;
+                        font-weight: 500;
                     }
                 }
             }
+            .social {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                font-size: 30px;
+                color: $main_black;
+            }
         }
         @media (max-width: 1260px) {
-            // font-size: 400px;
             grid-template-columns: 1fr;
             justify-content: center;
-            align-items: center;
             grid-template-rows: 250px 250px;
             .brand {
                 div {
                     font-size: 250px;
                     transform: translateY(10%);
+                }
+            }
+        }
+        @media (max-width: 577px) {
+            .brand {
+                div {
+                    font-size: 200px;
+                }
+            }
+            .intro {
+                h3:first-of-type {
+                    font-size: 42px;
+                }
+                h3:last-of-type {
+                    font-size: 35px;
+                }
+                .links {
+                    a {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        @media (max-width: 410px) {
+            .intro {
+                h3:last-of-type {
+                    font-size: 30px;
+                }
+                .links {
+                    a {
+                        font-size: 12px;
+                    }
                 }
             }
         }
