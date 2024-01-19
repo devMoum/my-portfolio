@@ -5,6 +5,7 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
 }
 li {
     list-style: none;
@@ -14,4 +15,10 @@ a {
 }
 .container {
     padding: 0 20%;
+}
+.sec_name {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 45px;
+    padding: 50px 0;
 }
