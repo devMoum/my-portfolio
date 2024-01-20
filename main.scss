@@ -8,6 +8,7 @@
 header {
     .container {
         height: 72px;
+        padding: 0 20%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -115,6 +116,7 @@ header {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         height: 100%;
+        padding: 10% 15%;
         .brand {
             display: flex;
             justify-content: center;
@@ -251,33 +253,13 @@ header {
     }
 }
 
-// start footer 
-footer {
-    height: 70px;
-    text-transform: capitalize;
-    font-size: 18px;
-    font-weight: 600;
-    color: $back_white;
-    background-image: linear-gradient(148deg,$main_black,$main_black, $sec_blue);
-    background-color: $main_black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    span {
-        color: $sec_blue;
-    }
-    i {
-        transform: rotate(180deg);
-    }
-}
-
 // start about me 
 .about {
     .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-content: center;
         gap: 50px;
-        padding: 0 10%;
         .me {
             border: 1px solid $sec_black;
             border-radius: 20px;
@@ -355,6 +337,7 @@ footer {
         }
         @media (max-width: 1300px) {
             grid-template-columns: 1fr;
+            justify-content: center;
         }
         @media (max-width: 500px) {
             .summary {
@@ -364,5 +347,121 @@ footer {
                 }
             }
         }
+    }
+}
+
+// start experience 
+.experiences {
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 50px;
+        >div {
+            border: 1px solid;
+            border-radius: 20px;
+            padding: 30px 20px;
+            > h4 {
+                text-align: center;
+                font-size: 32px;
+                text-transform: capitalize;
+                padding: 0 0 30px;
+            }
+        }
+        .technical {
+            .skills {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                text-transform: uppercase;
+                letter-spacing: 0;
+                color: $main_black;
+                gap: 10px;
+                .list {
+                    display: flex;
+                    flex-direction: column;
+                    // gap: 100px;
+                    li {
+                        display: flex;
+                        // border: solid;
+                        height: 100px;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+                        img {
+                            width: 35px;
+                        }
+                        .skill {
+                            h5 {
+                                font-size: 16px;
+                            }
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+                @media (max-width: 700px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                @media (max-width: 500px) {
+                    // grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        }
+        .certifs {
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                justify-content: space-around;
+                // color: $main_blue;
+                div {
+                    text-align: center;
+                    text-transform: capitalize;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                    img {
+                        width: 70px;
+                    }
+                    a {
+                        color: $main_black;
+                        font-size: 15px;
+                        padding: 8px 15px;
+                        border: 1px solid $main_black;
+                        border-radius: 8px;
+                        &:hover {
+                            background-color: $main_blue;
+                            border-color: $main_blue;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 1200px) {
+            grid-template-columns: 1fr;
+            justify-content: center;
+        }
+    }
+}
+
+// start footer 
+footer {
+    height: 70px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+    color: $back_white;
+    background-image: linear-gradient(148deg,$main_black,$main_black, $sec_blue);
+    background-color: $main_black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+        color: $sec_blue;
+    }
+    i {
+        transform: rotate(180deg);
     }
 }
