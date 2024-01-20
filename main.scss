@@ -116,10 +116,10 @@ header {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         height: 100%;
-        padding: 10% 15%;
+        padding: 10% 20%;
         .brand {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             div {
                 font-size: 300px;
@@ -212,6 +212,7 @@ header {
             justify-content: center;
             grid-template-rows: 250px 250px;
             .brand {
+                justify-content: center;
                 div {
                     font-size: 250px;
                     transform: translateY(10%);
