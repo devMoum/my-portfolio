@@ -1,8 +1,7 @@
 // import global rules 
-@use "./style/sass/layouts/global_rules";
-
-// import colors 
-@use "./style/sass/variables/colors" as *;
+@use "./sass/layouts/global_rules";
+// import var 
+@use "./sass/variables/colors" as *;
 
 // start header 
 header {
@@ -96,7 +95,20 @@ header {
         }
     }
 }
-
+// scroll back to top 
+.upscroll {
+    position: fixed;
+    right: -100px;
+    bottom: 15%;
+    cursor: pointer;
+    transition: 0.3s;
+    i {
+        font-size: 50px;
+    }
+}
+.show {
+    right: 10%;
+}
 // start landing 
 .landing {
     height: calc(100vh - 72px);
@@ -455,6 +467,36 @@ header {
             justify-content: center;
             align-items: center;
             box-shadow: 0 0 12px 3px #ddd;
+            cursor: pointer;
+            position: relative;
+            transition: 0.3s;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 5px;
+                background-color: $main_blue;
+                left: 50%;
+                top: -4px;
+                transition: 0.3s;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 5px;
+                background-color: $main_blue;
+                right: 50%;
+                top: -4px;
+                transition: 0.3s;
+            }
+            &:hover {
+                transform: translateY(-10px);
+                &::before,
+                &::after {
+                    width: 50%;
+                }
+            }
             .image {
                 border-bottom: 0;
                 display: flex;
@@ -506,7 +548,6 @@ header {
         }
     }
 }
-
 // start contact 
 .contact {
     .container {
