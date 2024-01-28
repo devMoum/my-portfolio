@@ -1,7 +1,7 @@
 // import global rules 
-@use "./sass/layouts/global_rules";
+@use "./css/sass/layouts/global_rules";
 // import var 
-@use "./sass/variables/colors" as *;
+@use "./css/sass/helpers/variables" as *;
 
 // start header 
 header {
@@ -385,10 +385,8 @@ header {
                 .list {
                     display: flex;
                     flex-direction: column;
-                    // gap: 100px;
                     li {
                         display: flex;
-                        // border: solid;
                         height: 100px;
                         align-items: center;
                         justify-content: center;
