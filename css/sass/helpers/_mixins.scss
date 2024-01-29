@@ -1,0 +1,40 @@
+// start breakpoints 
+@mixin breakpoints ($point){
+    @if $point == fold_mobile {
+        @media (max-width: 305px) {
+            @content;
+        }
+    }@else if $point == mobile {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }@else if $point == tablet {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }@else if $point == sm_pc {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }@else if $point == md_pc {
+        @media (max-width: 1260px) {
+            @content;
+        }
+    }
+}
+// end breakpoints 
+// start centering 
+@mixin h_center ($gap){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+@mixin v_center ($gap){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+// end centering 
