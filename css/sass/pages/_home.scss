@@ -208,16 +208,17 @@ header {
         grid-template-columns: 1fr 1fr;
         justify-content: center;
         gap: 50px;
+        @include breakpoints (md_pc){
+            grid-template-columns: 1fr;
+            justify-content: center;
+        }
         .me {
             border: 1px solid $sec_black;
             border-radius: 20px;
             padding: 30px;
             > .title {
+                @include h_center(10px);
                 color: $main_black;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
                 border-bottom: 2px solid $sec_black;
                 padding-bottom: 25px;
                 i {
@@ -232,9 +233,7 @@ header {
         .education {
             .description {
                 .certif {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5px;
+                    @include v_center(15px);
                     padding: 20px 0;
                     border-bottom: 2px solid $sec_black;
                     &:last-of-type {
@@ -243,8 +242,8 @@ header {
                     .title {
                         display: flex;
                         justify-content: space-between;
-                        gap: 10px;
                         align-items: center;
+                        gap: 10px;
                         text-transform: capitalize;
                         h5 {
                             font-size: 22px;
@@ -264,7 +263,7 @@ header {
                             text-transform: capitalize;
                             position: relative;
                             margin-left: 20px;
-                            margin-bottom: 5px;
+                            margin-bottom: 5px; 
                             &::before {
                                 content: "\2022";
                                 position: absolute;
@@ -284,15 +283,7 @@ header {
                 font-size: 16px;
                 font-weight: 500;
                 line-height: 1.7;
-            }
-        }
-        @media (max-width: 1300px) {
-            grid-template-columns: 1fr;
-            justify-content: center;
-        }
-        @media (max-width: 500px) {
-            .summary {
-                .description {
+                @include breakpoints (mobile){
                     font-size: 14px;
                 }
             }
@@ -305,7 +296,11 @@ header {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 50px;
-        >div {
+        @include breakpoints(md_pc){
+            grid-template-columns: 1fr;
+            justify-content: center;
+        }
+        > div {
             border: 1px solid $sec_black;
             border-radius: 20px;
             padding: 30px 20px;
@@ -324,15 +319,18 @@ header {
                 letter-spacing: 0;
                 color: $main_black;
                 gap: 10px;
+                @include breakpoints (tablet){
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                @include breakpoints (mobile){
+                    grid-template-columns: repeat(1, 1fr);
+                }
                 .list {
                     display: flex;
                     flex-direction: column;
                     li {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        @include h_center(5px);
                         height: 100px;
-                        gap: 5px;
                         img {
                             width: 35px;
                         }
@@ -345,28 +343,17 @@ header {
                             }
                         }
                     }
-                }
-                @media (max-width: 700px) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                @media (max-width: 350px) {
-                    grid-template-columns: repeat(1, 1fr);
-                }
+                }  
             }
         }
         .certifs {
             > div {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                gap: 50px;
+                @include v_center(50px);
                 div {
-                    display: flex;
-                    text-align: center;
-                    flex-direction: column;
+                    @include v_center(20px);
                     align-items: center;
+                    text-align: center;
                     text-transform: capitalize;
-                    gap: 20px;
                     i {
                         font-size: 70px;
                         color: rebeccapurple;
@@ -386,10 +373,6 @@ header {
                 }
             }
         }
-        @media (max-width: 1200px) {
-            grid-template-columns: 1fr;
-            justify-content: center;
-        }
     }
 }
 // start projects 
@@ -400,11 +383,17 @@ header {
         align-items: center;
         grid-template-columns: repeat(2, 350px);
         gap: 50px;
+        @include breakpoints (sm_pc){
+            grid-template-columns: 350px;
+        }
+        @include breakpoints (mobile){
+            grid-template-columns: 270px;
+        }
+        @include breakpoints (fold_mobile){
+            grid-template-columns: 250px;
+        }
         .proj {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include v_center(0);
             position: relative;
             cursor: pointer;
             box-shadow: 0 0 12px 3px #ddd;
@@ -437,9 +426,7 @@ header {
                 }
             }
             .image {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include h_center(0);
                 border-bottom: 0;
                 background-color: $sec_black;
                 img {
@@ -456,10 +443,7 @@ header {
                     padding: 20px 0;
                 }
                 div {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 20px;
+                    @include h_center(20px);
                     width: 100%;
                 a {
                     background-color: $sec_black;
@@ -476,48 +460,35 @@ header {
                 }
             }
         }
-        @media (max-width: 900px) {
-            grid-template-columns: repeat(1, 350px);
-        }
-        @media (max-width: 450px) {
-            grid-template-columns: repeat(1, 270px);
-        }
-        @media (max-width: 300px) {
-            grid-template-columns: repeat(1, 250px);
-        }
     }
 }
 // start contact 
 .contact {
     .container {
-        display: flex;
-        flex-direction: column;
+        @include v_center(50px);
         align-items: center;
-        gap: 50px;
         padding-bottom: 10%;
         > div {
-            display: flex;
-            align-items: center;
+            @include h_center(0);
             i {
                 color: $main_black;
                 font-size: 50px;
+                @include breakpoints (tablet){
+                    font-size: 40px;
+                }
             }
             a {
                 color: $main_black;
                 font-size: 32px;
                 text-transform: uppercase;
-            }
-            @media (max-width: 550px) {
-                i {
-                    font-size: 40px;
-                }
-                a {
+                @include breakpoints (tablet){
                     font-size: 24px;
                 }
-            }
-            @media (max-width: 450px) {
-                a {
+                @include breakpoints (mobile){
                     font-size: 18px;
+                }
+                @include breakpoints (fold_mobile){
+                    font-size: 15px;
                 }
             }
         }
@@ -526,11 +497,8 @@ header {
             padding: 20px 30px;
             box-shadow: 0 0 12px 3px #ddd;
             border-radius: 20px;
-            @media (max-width: 380px) {
+            @include breakpoints (mobile){
                 flex-direction: column;
-                a {
-                    font-size: 15px;
-                }
             }
         }
         .social {
@@ -540,9 +508,7 @@ header {
 }
 // start footer 
 footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include h_center(0);
     height: 70px;
     text-transform: capitalize;
     font-size: 18px;
