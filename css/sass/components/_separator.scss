@@ -1,0 +1,12 @@
+// import variables 
+@use "../helpers/variables" as *;
+.sec_separator {
+    text-align: center;
+    text-transform: capitalize;
+    padding: 100px 0;
+    color: $back_white;
+    background-image: linear-gradient(148deg,$main_black,$main_black, $main_blue);
+    h2 {
+        font-size: 45px;
+    }
+}

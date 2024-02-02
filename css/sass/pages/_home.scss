@@ -1,8 +1,10 @@
 // import helpers 
 @use "../helpers" as *;
+// import components 
+@use "../components";
 // start header 
 header {
-    .container {
+    .h_container {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -197,6 +199,12 @@ header {
             .social {
                 @include h_center(20px);
                 font-size: 40px;
+                .insta {
+                    color: $insta;
+                }
+                .linkedin {
+                    color: $linkedin;
+                }
             }
         }
     }
@@ -467,11 +475,9 @@ header {
     .container {
         @include v_center(50px);
         align-items: center;
-        padding-bottom: 10%;
         > div {
             @include h_center(0);
             i {
-                color: $main_black;
                 font-size: 50px;
                 @include breakpoints (tablet){
                     font-size: 40px;
@@ -480,6 +486,7 @@ header {
             a {
                 color: $main_black;
                 font-size: 32px;
+                font-weight: 500;
                 text-transform: uppercase;
                 @include breakpoints (tablet){
                     font-size: 24px;
@@ -503,6 +510,12 @@ header {
         }
         .social {
             gap: 40px;
+            a:first-of-type {
+                color: $insta;
+            }
+            a:last-of-type {
+                color: $linkedin;
+            }
         }
     }
 }
@@ -515,7 +528,6 @@ footer {
     font-weight: 600;
     color: $back_white;
     background-image: linear-gradient(148deg,$main_black,$main_black, $sec_blue);
-    background-color: $main_black;
     span {
         color: $sec_blue;
     }
