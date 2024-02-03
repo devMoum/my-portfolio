@@ -1,0 +1,14 @@
+// scroll back to top 
+.upscroll {
+    position: fixed;
+    right: -100px;
+    bottom: 15%;
+    cursor: pointer;
+    transition: 0.3s;
+    i {
+        font-size: 50px;
+    }
+}
+.show {
+    right: 10%;
+}

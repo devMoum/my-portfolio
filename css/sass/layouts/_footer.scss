@@ -1,0 +1,9 @@
+// import helpers 
+@use "../helpers" as *;
+footer {
+    @include h_center(0);
+    height: 70px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+}

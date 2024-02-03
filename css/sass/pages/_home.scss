@@ -2,99 +2,25 @@
 @use "../helpers" as *;
 // import components 
 @use "../components";
+// import layouts 
+@use "../layouts";
 // start header 
 header {
-    .h_container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 72px;
-        text-transform: capitalize;
-        position: relative;
-        @include breakpoints(md_pc) {
-            @include v_center(15px);
-            height: 115px;
+    .logo {
+        span {
+            color: $sec_blue;
         }
-        .logo {
-            font-size: 32px;
-            font-weight: 600;
-            color: $main_black;
-            @include breakpoints(mobile) {
-                font-size: 28px;
-            }
-            span {
-                color: $sec_blue;
-            }
-            i {
-                transform: rotate(180deg);
-            }
-        }
-        .navbar {
-            @include h_center(10px);
-            font-size: 18px;
-            font-weight: 500;
-            @include breakpoints (mobile) {
-                display: none;
-                font-size: 16px;
-            }
-            li {
-                padding: 5px 15px;
-                border: solid 1px transparent;
-                border-radius: 8px;
-                &:hover {
-                    border-color: $main_blue;
-                    background-color: $main_blue;
-                    color: $main_black;
-                }
-                a {
-                    color: $main_black;
-                }
-                &:hover a{
-                    color: $main_black;
-                }
-            }
-        }
-        .minbar {
-            display: none;
-            @include breakpoints (mobile) {
-                display: flex;
-                .active {
-                    display: flex;   
-                }
-            }
-            i {
-                cursor: pointer;
-                font-size: 24px;
-            }
-            ul {
-                @extend .navbar;
-                position: absolute;
-                flex-direction: column;
-                width: 80%;
-                right: 10%;
-                bottom: -150px;
-                background-color: white;
-                li {
-                    position: relative;
-                    text-align: center;
-                    width: 100%;
-                    padding-right: 20px;
-                    border-radius: 8px;
-                    border: 2px solid $sec_black;
-                }
-            }
+        i {
+            transform: rotate(180deg);
         }
     }
 }
 // start landing 
 .landing {
     .container {
-        height: calc(100vh - 72px);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         @include breakpoints (md_pc) {
-            height: calc(100vh - 120px);
-            padding-top: 50px;
             grid-template-columns: 1fr;
             justify-content: center;
             grid-template-rows: 250px 250px;
@@ -174,27 +100,6 @@ header {
             }
             .links {
                 @include h_center(20px);
-                a {
-                    padding: 10px 15px;
-                    text-align: center;
-                    font-size: 18px;
-                    font-weight: 400;
-                    text-transform: capitalize;
-                    border: solid 1px;
-                    border-radius: 8px;
-                    color: $main_black;
-                    @include breakpoints (mobile){
-                        font-size: 13px;
-                    }
-                    @include breakpoints (fold_mobile){
-                        font-size: 12px;
-                    }
-                    &:hover {
-                        background-color: $main_blue;
-                        border-color: $main_blue;
-                        font-weight: 500;
-                    }
-                }
             }
             .social {
                 @include h_center(20px);
@@ -313,9 +218,9 @@ header {
             border-radius: 20px;
             padding: 30px 20px;
             > h4 {
+                text-transform: capitalize;
                 text-align: center;
                 font-size: 32px;
-                text-transform: capitalize;
                 padding: 0 0 30px;
             }
         }
@@ -323,10 +228,10 @@ header {
             .skills {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
                 text-transform: uppercase;
                 letter-spacing: 0;
                 color: $main_black;
-                gap: 10px;
                 @include breakpoints (tablet){
                     grid-template-columns: repeat(2, 1fr);
                 }
@@ -334,8 +239,7 @@ header {
                     grid-template-columns: repeat(1, 1fr);
                 }
                 .list {
-                    display: flex;
-                    flex-direction: column;
+                    @include v_center(0);
                     li {
                         @include h_center(5px);
                         height: 100px;
@@ -366,24 +270,12 @@ header {
                         font-size: 70px;
                         color: rebeccapurple;
                     }
-                    a {
-                        color: $main_black;
-                        font-size: 15px;
-                        padding: 8px 15px;
-                        border: 1px solid $main_black;
-                        border-radius: 8px;
-                        &:hover {
-                            background-color: $main_blue;
-                            border-color: $main_blue;
-                            font-weight: 500;
-                        }
-                    }
                 }
             }
         }
     }
 }
-// start projects 
+// start projects
 .projects {
     .container {
         display: grid;
@@ -455,11 +347,7 @@ header {
                     width: 100%;
                 a {
                     background-color: $sec_black;
-                    color: $back_white;
-                    text-transform: capitalize;
-                    font-weight: 500;
-                    padding: 10px 15px;
-                    border-radius: 8px;
+                    color: $back_white;   
                     &:hover {
                         color: $sec_black;
                         background-color: $main_blue;
@@ -521,11 +409,6 @@ header {
 }
 // start footer 
 footer {
-    @include h_center(0);
-    height: 70px;
-    text-transform: capitalize;
-    font-size: 18px;
-    font-weight: 600;
     color: $back_white;
     background-image: linear-gradient(148deg,$main_black,$main_black, $sec_blue);
     span {
@@ -534,18 +417,4 @@ footer {
     i {
         transform: rotate(180deg);
     }
-}
-// scroll back to top 
-.upscroll {
-    position: fixed;
-    right: -100px;
-    bottom: 15%;
-    cursor: pointer;
-    transition: 0.3s;
-    i {
-        font-size: 50px;
-    }
-}
-.show {
-    right: 10%;
 }

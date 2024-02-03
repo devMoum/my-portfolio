@@ -1,0 +1,23 @@
+// import helpers 
+@use "../helpers" as *;
+.btn-link {
+    padding: 10px 15px;
+    text-transform: capitalize;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 8px;
+    font-size: 18px; // to be modified
+    font-weight: 400; // to be modified
+    color: $main_black; // to be modified
+    @include breakpoints (mobile){
+        font-size: 13px; // to be modified
+    }
+    @include breakpoints (fold_mobile){
+        font-size: 12px; // to be modified
+    }
+    &:hover {
+        background-color: $main_blue; // to be modified
+        border-color: $main_blue; // to be modified
+        font-weight: 500; // to be modified
+    }
+}

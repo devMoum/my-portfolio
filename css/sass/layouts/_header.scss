@@ -1,0 +1,71 @@
+// import helpers 
+@use "../helpers" as *;
+// header container 
+header {
+    text-transform: capitalize;
+    position: relative;
+    .logo {
+        color: $main_black; // to be modified
+        font-size: 32px; // to be modified
+        font-weight: 600; // to be modified
+        @include breakpoints(mobile) {
+            font-size: 28px; // to be modified
+        }
+    }
+    .navbar {
+        @include h_center(10px);
+        font-size: 18px;
+        font-weight: 500;
+        @include breakpoints (mobile) {
+            display: none;
+            font-size: 16px;
+        }
+        li {
+            padding: 5px 15px;
+            border: solid 1px transparent;
+            border-radius: 8px;
+            &:hover {
+                border-color: $main_blue; // to be modified
+                background-color: $main_blue; // to be modified
+                color: $main_black; // to be modified
+            }
+            a {
+                color: $main_black; // to be modified
+            }
+            &:hover a{
+                color: $main_black; // to be modified
+            }
+        }
+    }
+    .minbar {
+        display: none;
+        @include breakpoints (mobile) {
+            display: flex;
+            .active {
+                display: flex;   
+            }
+        }
+        i {
+            cursor: pointer;
+            font-size: 24px;
+        }
+        ul {
+            @extend .navbar;
+            position: absolute;
+            flex-direction: column;
+            width: 80%;
+            right: 10%;
+            bottom: -150px;
+            background-color: white;
+            li {
+                position: relative;
+                text-align: center;
+                width: 100%;
+                padding-right: 20px;
+                border-radius: 8px;
+                border: 2px solid $sec_black;
+            }
+        }
+    }
+}
+// end header container 

@@ -1,6 +1,20 @@
+// import helpers 
+@use "../helpers" as *;
+// section container 
 .container {
     padding: 10% 15%;
 }
+// end section container 
+// header container 
 .h_container {
+    height: 72px;
     padding: 0 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoints(md_pc) {
+        @include v_center(15px);
+        height: 115px;
+    }
 }
+// end header container 

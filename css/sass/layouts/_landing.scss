@@ -1,0 +1,12 @@
+// import helpers 
+@use "../helpers" as *;
+// start landing 
+.landing {
+    .container {
+        height: calc(100vh - 72px);
+        @include breakpoints (md_pc) {
+            height: calc(100vh - 120px);
+            padding-top: 50px;
+        }
+    }
+}
