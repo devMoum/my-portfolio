@@ -5,11 +5,11 @@ header {
     text-transform: capitalize;
     position: relative;
     .logo {
-        color: $main_black; // to be modified
-        font-size: 32px; // to be modified
+        font-size: 18px; // to be modified
         font-weight: 600; // to be modified
+        color: $main_black; // to be modified
         @include breakpoints(mobile) {
-            font-size: 28px; // to be modified
+            font-size: 16px; // to be modified
         }
     }
     .navbar {
