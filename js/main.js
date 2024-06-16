@@ -1,9 +1,15 @@
 // start burger menu 
 const burger = document.getElementById("burger");
 const navBar = document.getElementById("hidden");
+const landing = document.querySelector(".landing");
 burger.onclick = ()=>{
     navBar.hasAttribute("class") ? navBar.removeAttribute("class"): navBar.setAttribute("class", "active");
 };
+landing.onclick = ()=>{
+    if(navBar.hasAttribute("class")){
+        navBar.removeAttribute("class");
+    }
+}
 // end burger menu 
 // start scrool totop 
 let arrow = document.querySelector(".upscroll");
